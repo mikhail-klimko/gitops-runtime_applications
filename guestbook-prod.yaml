@@ -1,33 +1,33 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: guestbook-prod
-#   labels:
-#     env: prod
-#   annotations:
-#     codefresh.io/product: guestbook
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io/foreground
-# spec:
-#   project: default
-#   source:
-#     path: prod
-#     repoURL: https://github.com/mikhail-klimko/guestbook.git
-#     targetRevision: HEAD
-#   destination:
-#     name: in-cluster
-#     namespace: guestbook-prod
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#       allowEmpty: true
-#     syncOptions:
-#       - PrunePropagationPolicy=foreground
-#       - Replace=false
-#       - PruneLast=false
-#       - Validate=true
-#       - CreateNamespace=true
-#       - ApplyOutOfSyncOnly=false
-#       - ServerSideApply=true
-#       - RespectIgnoreDifferences=false
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-prod
+  labels:
+    env: prod
+  annotations:
+    codefresh.io/product: guestbook
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/foreground
+spec:
+  project: default
+  source:
+    path: prod
+    repoURL: https://github.com/mikhail-klimko/guestbook.git
+    targetRevision: HEAD
+  destination:
+    name: in-cluster
+    namespace: guestbook-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=false
+      - ServerSideApply=true
+      - RespectIgnoreDifferences=false
