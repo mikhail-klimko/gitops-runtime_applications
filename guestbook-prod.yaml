@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: guestbook-prod
+  labels:
+    env: prod
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
 spec:
