@@ -17,17 +17,17 @@ spec:
   destination:
     name: in-cluster
     namespace: guestbook-dev
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: true
-    syncOptions:
-      - PrunePropagationPolicy=foreground
-      - Replace=false
-      - PruneLast=false
-      - Validate=true
-      - CreateNamespace=true
-      - ApplyOutOfSyncOnly=false
-      - ServerSideApply=true
-      - RespectIgnoreDifferences=false
+  syncPolicy: {}
+    # automated:
+    #   prune: true
+    #   selfHeal: true
+    #   allowEmpty: true
+    # syncOptions:
+    #   - PrunePropagationPolicy=foreground
+    #   - Replace=false
+    #   - PruneLast=false
+    #   - Validate=true
+    #   - CreateNamespace=true
+    #   - ApplyOutOfSyncOnly=false
+    #   - ServerSideApply=true
+    #   - RespectIgnoreDifferences=false
